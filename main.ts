@@ -22,11 +22,16 @@ function renderSeriesInTable(series: Series[]): void {
     trElement.innerHTML = `<td>${serie.id}</td>
                            <td>${serie.nombre}</td>
                            <td>${serie.plataforma}</td>
-                           <td>${serie.temporadas}</td>
-                           <td>${serie.descripcion}</td>
-                           <td>${serie.link}</td>
-                           <td>${serie.imagen}</td>`;
+                           <td>${serie.temporadas}</td>`;
     seriesTbody.appendChild(trElement);
+    trElement.addEventListener('click', () => {
+      document.getElementById('serie-nombre')!.textContent = serie.nombre;
+      document.getElementById('serie-descripcion')!.textContent = serie.descripcion;
+      const serieImage = document.getElementById('serie-imagen')!
+          serieImage.setAttribute('src', serie.imagen);
+      const serieUrl = document.getElementById('serie-link') as HTMLAnchorElement;
+          serieUrl.href = serie.link;
+        })
   });
 }
  

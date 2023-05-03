@@ -9,9 +9,18 @@ totalCreditElm.innerHTML = "".concat(getAverageSeassons(dataSeries));
 function renderSeriesInTable(series) {
     console.log('Desplegando series');
     series.forEach(function (serie) {
+        console.log(serie);
         var trElement = document.createElement("tr");
-        trElement.innerHTML = "<td>".concat(serie.id, "</td>\n                           <td>").concat(serie.nombre, "</td>\n                           <td>").concat(serie.plataforma, "</td>\n                           <td>").concat(serie.temporadas, "</td>\n                           <td>").concat(serie.descripcion, "</td>\n                           <td>").concat(serie.link, "</td>\n                           <td>").concat(serie.imagen, "</td>");
+        trElement.innerHTML = "<td>".concat(serie.id, "</td>\n                            <td>").concat(serie.nombre, "</td>\n                            <td>").concat(serie.plataforma, "</td>\n                            <td>").concat(serie.temporadas, "</td>");
         seriesTbody.appendChild(trElement);
+        trElement.addEventListener('click', function () {
+            document.getElementById('serie-nombre').textContent = serie.nombre;
+            document.getElementById('serie-descripcion').textContent = serie.descripcion;
+            var serieImage = document.getElementById('serie-imagen');
+            serieImage.setAttribute('src', serie.imagen);
+            var serieUrl = document.getElementById('serie-link');
+            serieUrl.href = serie.link;
+        });
     });
 }
 function applyFilterByName() {
