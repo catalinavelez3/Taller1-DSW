@@ -1,31 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tutorial 1</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
     integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <style>
+    h1 {
+        color: rgb(255, 0, 255); /* magenta */
+        outline: 1cm;
+        text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+    
+       
+      }
+    h2 {
+        color: blueviolet;
+        text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+        
+      }
+    tr {
+        color: cornflowerblue;
+        outline-style: solid;
+        outline-color: blue;
+    
+      
+      }
+    h5 {
+        color: aquamarine
+      }
+  </style>
 </head>
 
 <body>
-  <div class="containerHead">
+  <div class="container">
     <div class="row">
+      <div class="col-md-6">
       <h1>Series</h1>
       <img
         src="https://res.cloudinary.com/teepublic/image/private/s--ngYnda_X--/c_fit,g_north_west,h_708,w_840/co_000000,e_outline:40/co_000000,e_outline:inner_fill:1/co_ffffff,e_outline:40/co_ffffff,e_outline:inner_fill:1/co_bbbbbb,e_outline:3:1000/c_mpad,g_center,h_1260,w_1260/b_rgb:eeeeee/c_limit,f_jpg,h_630,q_90,w_630/v1588864110/production/designs/9898897_0.jpg"
-        height="300px" width="300px" alt="Avatar" alt="Avatar">
+        height="300px" width="300px" alt="Avatar">
+      </div>
+      <div class="row">
       <div class="col">
-        <h2>Series </h2>
-        <form style="margin:5px;">
+        <h2>Series</h2>
+        <form style="margin:10px;">
           <div class="form-row">
             <div class="col">
               <input type="text" class="form-control" id="search-box" placeholder="Filtrar por nombre">
             </div>
             <div class="col">
               <button type="button" id="button-filterByName" class="btn btn-success">Aplicar</button>
-            </div>
+            </div> 
           </div>
         </form>
         <table id="seriesTable" class="table table-bordered">
@@ -53,6 +80,7 @@
                         <a id='serie-link' href="#" target="_blank">Ver serie</a>
                     </div>
                 </div>
+                
             </div>
       </div>
     </div>
